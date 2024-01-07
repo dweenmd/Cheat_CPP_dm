@@ -1,64 +1,81 @@
-// week 3 module 8 split 4
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> merge_sort(vector<int> a)
+vector<int> merge_sort(vector<int> arr)
 {
     // base case
-    if (a.size() <= 1)
+    if (arr.size() <= 1)
     {
-        return a;
+        return arr;
     }
-    int mid = a.size() / 2;
-    vector<int> b;
-    vector<int> c;
+    int mid = arr.size() / 2;
+
+    //(left)  2 4 6 | 3 5 7 9 (right)
+
+    vector<int> left;
     for (int i = 0; i < mid; i++)
     {
-        b.push_back(a[i]);
+        left.push_back(arr[i]);
     }
-    for (int i = mid; i < a.size(); i++)
+
+    vector<int> right;
+    for (int i = mid; i < arr.size(); i++)
     {
-        c.push_back(a[i]);
+        right.push_back(arr[i]);
     }
-    vector<int> sorted_b = merge_sort(b);
-    vector<int> sorted_c = merge_sort(c);
 
-    vector<int> sorted_a;
-    int indx1 = 0;
-    int indx2 = 0;
-    // merging 2 sorted array
-    for (int i = 0; i < a.size(); i++)
+    // working with recursion
+    vector<int> sorted_left = merge_sort(left);
+    vector<int> sorted_right = merge_sort(right);
 
+    vector<int> sorted_array;
+    int indxl = 0;
+    int indxr = 0;
+    // merging sorted_left & sorted_right arry in sorted array
+    for (int i = 0; i < arr.size(); i++)
     {
-        if (indx1 == sorted_b.size())
+        if (indxl == sorted_left.size())
         {
-            sorted_a.push_back(sorted_c[indx2]);
-            indx2++;
+            sorted_array.push_back(sorted_right[indxr]);
+            indxr++;
         }
-        else if (indx2 == sorted_c.size())
+        else if (indxr == sorted_right.size())
         {
-            sorted_a.push_back(sorted_b[indx1]);
-            indx1++;
+            sorted_array.push_back(sorted_left[indxl]);
+            indxl++;
         }
-        else if (sorted_b[indx1] < sorted_c[indx2])
+        else if (sorted_left[indxl] < sorted_right[indxr])
         {
-            sorted_a.push_back(sorted_b[indx1]);
-            indx1++;
+            sorted_array.push_back(sorted_left[indxl]);
+            indxl++;
         }
         else
         {
-            sorted_a.push_back(sorted_c[indx2]);
-            indx2++;
+            sorted_array.push_back(sorted_right[indxr]);
+            indxr++;
         }
     }
-    return sorted_a;
+    return sorted_array;
+}
+void printArr(const vector<int > & arr)
+{
+    for(int i=0;i<arr.size();++i)
+    {
+        cout<<arr[i]<<" ";
+    }
 }
 
-int main ()
+int main()
 {
-    vector<int> a={5,3,7,1,8,9};
-    vector <int> ans =merge_sort(a);
-    for(int i=0;i<ans.size();i++)
-    cout<<ans[i]<<" ";
+    int n;
+    cin>>n;
+    vector <int> array;
+    for(int i=0;i<n;i++)
+    {
+        int elements;
+        cin>>elements;
+        array.push_back(elements);
+    }
+    vector<int> ans=merge_sort(array);
+    printArr(ans);
 
-    return 0;
 }
