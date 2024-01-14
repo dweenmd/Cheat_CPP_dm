@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     vector<int> arr = {2, 6, 8, 10, 12, 14, 15, 18, 19, 28, 30};
@@ -10,7 +11,7 @@ int main()
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
-        cout << "mid: " << mid << endl;
+        //cout << "mid: " << mid << endl;
         if (arr[mid] == target)
         {
             ans = mid;

@@ -1,5 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+void printArr(const vector<int> &arr)
+{
+    for (int i = 0; i < arr.size(); ++i)
+    {
+        cout << arr[i] << " ";
+    }
+}
 vector<int> merge_sort(vector<int> arr)
 {
     // base case
@@ -16,7 +23,6 @@ vector<int> merge_sort(vector<int> arr)
     {
         left.push_back(arr[i]);
     }
-
     vector<int> right;
     for (int i = mid; i < arr.size(); i++)
     {
@@ -25,8 +31,11 @@ vector<int> merge_sort(vector<int> arr)
 
     // working with recursion
     vector<int> sorted_left = merge_sort(left);
+    printArr(sorted_left);
+    cout << '\n';
     vector<int> sorted_right = merge_sort(right);
-
+    printArr(sorted_right);
+    cout << '\n';
     vector<int> sorted_array;
     int indxl = 0;
     int indxr = 0;
@@ -54,28 +63,21 @@ vector<int> merge_sort(vector<int> arr)
             indxr++;
         }
     }
+    
     return sorted_array;
-}
-void printArr(const vector<int > & arr)
-{
-    for(int i=0;i<arr.size();++i)
-    {
-        cout<<arr[i]<<" ";
-    }
 }
 
 int main()
 {
     int n;
-    cin>>n;
-    vector <int> array;
-    for(int i=0;i<n;i++)
+    cin >> n;
+    vector<int> array;
+    for (int i = 0; i < n; i++)
     {
         int elements;
-        cin>>elements;
+        cin >> elements;
         array.push_back(elements);
     }
-    vector<int> ans=merge_sort(array);
+    vector<int> ans = merge_sort(array);
     printArr(ans);
-
 }
