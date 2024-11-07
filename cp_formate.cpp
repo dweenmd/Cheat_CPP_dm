@@ -2,7 +2,7 @@
 #define ll       long long int
 #define asc(v)   sort(v.begin(), v.end())            //vectors,pairs,tuples,string
 #define dsc(v)   sort(v.begin(), v.end(), greater<int>())
-#define vwv      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+#define dween      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 
 using namespace std;
 
@@ -22,7 +22,7 @@ ll reverse(ll n)   {ll res=0; while(n){res=res*10+n%10; n=n/10;} return res;}
 void code();
 int main()
 {
-    vwv
+    dween
     int t;cin >> t;while (t--)code();
 }
 void code()
