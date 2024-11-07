@@ -17,7 +17,7 @@ ll factorial(ll n) {ll factorial = 1;for (ll i = 2; i <= n; i++)factorial = fact
 ll nCr(ll n, ll r) {return factorial(n) / (factorial(r) * factorial(n - r));}
 ll countDigit(ll n){return (int)log10(n) + 1;}
 ll removeZero(ll n){ll q=0,r;while(n > 0){r = n % 10;n = n / 10;if(r!=0){q = q*10 + r;}}n = q;q= 0;while(n>0){r = n % 10;n = n / 10;q= q*10 + r;}return q;}
-ll reverse(ll n)   {ll res=0; while(n){res=res*10+n%10; n=n/10;} return res;}
+ll revInt(ll n)   {ll res=0; while(n){res=res*10+n%10; n=n/10;} return res;}
 
 void code();
 int main()
@@ -27,6 +27,8 @@ int main()
 }
 void code()
 {
-    
+    ll s=2930582;
+    cout<<revInt(s)<<"\n";
+    cout<<removeZero(s)<<"\n";
   
 }
