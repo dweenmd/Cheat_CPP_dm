@@ -27,8 +27,6 @@ int main()
 }
 void code()
 {
-    ll s=2930582;
-    cout<<revInt(s)<<"\n";
-    cout<<removeZero(s)<<"\n";
+    
   
 }
