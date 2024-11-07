@@ -19,9 +19,13 @@ ll countDigit(ll n){ll count = 0;while (n != 0){n = n / 10; ++count;}return coun
 ll removeZero(ll n){ll q=0,r;while(n > 0){r = n % 10;n = n / 10;if(r!=0){q = q*10 + r;}}n = q;q= 0;while(n>0){r = n % 10;n = n / 10;q= q*10 + r;}return q;}
 ll reverse(ll n) {ll res=0; while(n){res=res*10+n%10; n=n/10;} return res;}
 
+void code();
 int main()
-{  
+{
+    vwv
+    int t;cin >> t;while (t--)code();
+}
+void code()
+{
   
-    
-  return 0;
 }
