@@ -12,12 +12,12 @@ bool isPowerOfTwo(ll n){if(n==0)return false;return (ceil(log2(n)) == floor(log2
 bool isPerfectSquare(ll n){ll l=1;ll r=n;while(l<=r){ll mid=l+(r-l)/2;if(mid*mid==n)return true; if(mid*mid>n){r=mid-1;} else l=mid+1;}return false;}
 // Maths
 ll gcd(ll A, ll B) {if (B == 0)return A; else return gcd(B, A % B);}
-ll lcm(ll a, ll b){return (a/gcd(a,b)*b);}
+ll lcm(ll a, ll b) {return (a/gcd(a,b)*b);}
 ll factorial(ll n) {ll factorial = 1;for (ll i = 2; i <= n; i++)factorial = factorial * i;return factorial;}
 ll nCr(ll n, ll r) {return factorial(n) / (factorial(r) * factorial(n - r));}
-ll countDigit(ll n){ll count = 0;while (n != 0){n = n / 10; ++count;}return count;}
+ll countDigit(ll n){return (int)log10(n) + 1;}
 ll removeZero(ll n){ll q=0,r;while(n > 0){r = n % 10;n = n / 10;if(r!=0){q = q*10 + r;}}n = q;q= 0;while(n>0){r = n % 10;n = n / 10;q= q*10 + r;}return q;}
-ll reverse(ll n) {ll res=0; while(n){res=res*10+n%10; n=n/10;} return res;}
+ll reverse(ll n)   {ll res=0; while(n){res=res*10+n%10; n=n/10;} return res;}
 
 void code();
 int main()
@@ -27,5 +27,6 @@ int main()
 }
 void code()
 {
+    
   
 }
