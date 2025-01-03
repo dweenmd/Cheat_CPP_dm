@@ -12,6 +12,7 @@ int main()
 }
 void code()
 {
+    
   string s;
      getline(cin, s);  // Reading a full line of input
      
